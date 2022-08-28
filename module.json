@@ -1,0 +1,10 @@
+{
+    "name": "Elleon's Mark Deleter",
+    "author": "Lambda11 / FrostSigil",
+    "description": "Automatically deletes Elleon's Mark from your inventory when its amount becomes over 1700.",
+    "options": {
+        "niceName": "Elleon-s-Mark-Deleter"
+    },
+    "servers": ["https://raw.githubusercontent.com/FrostSigil/Elleon-s-Mark-Deleter/master/"],
+    "disableAutoUpdate": false
+}
