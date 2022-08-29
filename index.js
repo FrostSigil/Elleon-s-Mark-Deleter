@@ -13,6 +13,11 @@ module.exports = function MarkDeleter(mod) {
 			mod.settings.amount = n;
 				mod.command.message(`Delete <font color="#5da8ce">${n}</font>`);			
 		},
+		"max": arg => {
+			const n = Number(arg);
+			mod.settings.max = n;
+				mod.command.message(`Triggered <font color="#ffc6d00">>${n}</font>`);			
+		},
         $none() {
             enabled = !enabled;
 			command.message(`Elleon's Mark Deleter : ${enabled ? "enabled" : "disabled"}.`);
@@ -28,7 +33,7 @@ module.exports = function MarkDeleter(mod) {
 			
 			for (var i = 0; i < event.items.length; i++)
 			{
-				if (event.items[i].id === markId && event.items[i].amount > 1700)
+				if (event.items[i].id === markId && event.items[i].amount > mod.settings.max)
 				{
 					mod.toServer('C_DEL_ITEM', 3, {
 						gameId: myGameId,

@@ -5,6 +5,7 @@ Automatically deletes Elleon's Mark from your inventory when its amount becomes 
 ### Proxy commands:
 * **emd** - Toggles the module off/on
 * **emd del 150** - will delete by 150 Elleon's Mark
+* **emd max 1800** - will work when >1800.
 
 ### Info:
 Deletes 100 Elleon's Mark when triggered >1700.

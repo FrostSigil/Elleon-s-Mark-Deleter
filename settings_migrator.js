@@ -1,7 +1,8 @@
 "use strict"
 
 const DefaultSettings = {
-	"amount": 100
+	"amount": 10,
+	"max": 1700
 };
 
 module.exports = function MigrateSettings(from_ver, to_ver, settings) {
