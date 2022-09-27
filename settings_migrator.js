@@ -33,3 +33,27 @@ module.exports = function MigrateSettings(from_ver, to_ver, settings) {
 		return settings;
 	}
 }
+
+function MigrateOption(option, oldoption, excludes) {
+	if (oldoption === undefined) {
+		oldoption = option;
+	}
+
+	if (Array.isArray(option)) {
+		for (const key of Object.keys(option)) {
+			option[key] = MigrateOption(option[key], oldoption[key], excludes);
+		}
+	}
+
+	if (Object.getPrototypeOf(option) === Object.prototype) {
+		for (const key of Object.keys(option)) {
+			if (excludes.includes(key)) {
+				option[key] = oldoption[key] || null;
+			} else {
+				option[key] = MigrateOption(option[key], oldoption[key], excludes);
+			}
+		}
+	}
+
+	return option;
+}
