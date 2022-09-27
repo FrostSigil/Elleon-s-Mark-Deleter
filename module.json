@@ -4,7 +4,7 @@
     "description": "Automatically deletes Elleon's Mark from your inventory when its amount becomes over 1700.",
     "options": {
         "niceName": "Elleon-s-Mark-Deleter",
-        "settingsVersion": 1,
+        "settingsVersion": 2,
         "settingsFile": "config.json",
         "settingsMigrator": "settings_migrator.js",
         "reloadable": true
