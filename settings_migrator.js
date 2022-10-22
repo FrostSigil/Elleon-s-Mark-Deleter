@@ -2,7 +2,7 @@
 
 const DefaultSettings = {
 	"amount": 10,
-	"max": 9840
+	"max": 9800
 };
 
 module.exports = function MigrateSettings(from_ver, to_ver, settings) {

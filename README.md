@@ -9,7 +9,7 @@ Automatically deletes Elleon's Mark from your inventory when its amount becomes 
 
 ### Info:
 Deletes 10 Elleon's Mark when triggered >9800.
-Удаляет по 10 медалей Эллеона при перевышении количевства в инвентаре 1700шт. 
+Удаляет по 10 медалей Эллеона при перевышении количевства в инвентаре 9800шт. 
 Удаляет до тех пор пока медалей не станет < 9800шт
 
 ![image](https://teralore.com/items/icon_items/medal2_tex.png)
