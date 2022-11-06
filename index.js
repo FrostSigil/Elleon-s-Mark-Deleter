@@ -1,13 +1,11 @@
 "use strict"
-
 const markId = 151643; 
 
 module.exports = function MarkDeleter(mod) {
-	const command = mod.command;
 	let enabled = true;
 	let myGameId = 0n;
 		
-    command.add('emd', {
+    mod.command.add('emd', {
 		"del": arg => {
 			const n = Number(arg);
 			mod.settings.amount = n;
@@ -20,16 +18,16 @@ module.exports = function MarkDeleter(mod) {
 		},
         $none() {
             enabled = !enabled;
-			command.message(`Elleon's Mark Deleter : ${enabled ? "enabled" : "disabled"}.`);
+			mod.command.message(`Elleon's Mark Deleter : ${enabled ? "enabled" : "disabled"}.`);
 		}
 	});
 	
 	mod.hook('S_LOGIN', 14, (event) => {
 		myGameId = event.gameId;
-	})
+	});
 	
 	mod.hook('S_ITEMLIST', 4, (event) => {
-			if (!enabled) return;
+			if (!enabled) return;		
 			
 			for (var i = 0; i < event.items.length; i++)
 			{
@@ -41,9 +39,10 @@ module.exports = function MarkDeleter(mod) {
 						slot: event.items[i].slot,
 						amount: mod.settings.amount
 					});
+					mod.command.message(`<font color="#ffc6d00">Метки доблести Эллеона достигли своего максимума ${mod.settings.max}</font>`);
 					break;
 				}
 			}
 	});
 	
-}
+};
